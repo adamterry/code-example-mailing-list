@@ -18,6 +18,6 @@ The form processing script will lookup the subscribers state based on postcode a
 Each new subscriber is also sent login details to a custom loyalty member portal (Microsite)
 
 # ** Example code only
-Please note this is only sample code only and not a full working example.
+Please note this is sample code only and not a full working example.
 The purpose is to give potential employers a look a some code I have previously written.
 
