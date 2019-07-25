@@ -1,6 +1,6 @@
 <?php
 /**
- * mailing_list_form_submit.php
+ * mailing_list_submit.php
  *
  * Created by Adam Terry.
  * Advite Business Software
