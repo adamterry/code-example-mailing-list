@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>External Form</title>
+    </head>
+    <body>
+        
+        <label for="fname">First name</label>
+        <input type="text" value="" id="fname"><br>
+        
+        <label for="lname">Last name</label>
+        <input type="text" value="" id="lname"><br>
+        
+        <label for="email">Email</label>
+        <input type="text" value="" id="email"><br>
+        
+        <label for="phone">Mobile number</label>
+        <input type="text" value="" id="phone"><br>
+        
+        <label for="postcode">Postcode</label>
+        <input type="text" value="" id="postcode"><br><br>
+        
+        <button id="submit">Submit</button>
+        
+        <!-- jQuery Library -->
+        <script src="vendors/jquery-3.2.1.min.js"></script>
+        
+            
+        <!-- MAILING LIST SIGN UP SCRIPT -->
+        <script>
+            $(document).on('click', '#submit', function(){
+                
+                
+                // 1. SYSTEM RELATED DATA
+                
+                // Change this value to the id of the mailing list you wish to target.
+                // Mailing list id's can be found within the main system.
+                var mailingList = 21;
+                
+                // Change this value to the id of the loyalty program you wish to target.
+                // Loyalty program id's can be found within the main system.
+                //
+                // Set to 0 to use the admin assigned default loyalty program.
+                var loyaltyProgram = 29;
+                
+                
+                // 2. FORM DATA
+                
+                // First name
+                var fname = $('#fname').val();
+                // Last name
+                var lname = $('#lname').val();
+                // Email
+                var email = $('#email').val();
+                // Phone
+                var phone = $('#phone').val();
+                // Postcode
+                var postcode = $('#postcode').val();
+                
+                
+                // 3. CREATE DATA STRING TO PASS IN
+                var dataString = 'mailingList=' + mailingList + '&loyaltyProgram=' + loyaltyProgram + '&fname=' + fname + '&lname=' + lname + '&email=' + email + '&phone=' + phone + '&postcode=' + postcode;
+                
+                
+                // 4. PROCESS AJAX REQUEST
+    
+                // The below request will return numbered error or success responses (returnData).
+                // Use the value of 'returnData' to handle what happens next.
+                //
+                // Return codes:
+                // 0 = Error processing form.
+                // 1 = Missing form data.
+                // 2 = Email not valid.
+                // 3 = Email already exists in mailing list.
+                // 4 = Loyalty member created but an error occurred pushing member data to mailing list. Possibly an incorrect mailing list ID. Discount voucher will still be sent.
+                // 5 = Success!
+                $.ajax({
+                    url: 'ajax/mailing_list_submit.php',
+                    datatype: 'json',
+                    data: dataString,
+                    cache: false,
+                    success: function(returnData){
+                        if(returnData == 0){
+                            
+                            // ADD CUSTOM 'FORM SUBMIT ERROR' HERE
+                            alert('Example error : There was an error submitting the form');
+                            
+                        }else if(returnData == 1){
+                            
+                            // ADD CUSTOM 'MISSING FORM DATA' ERROR HERE
+                            alert('Example error :\nMissing form data');
+                            
+                        }else if(returnData == 2){
+                            
+                            // ADD CUSTOM 'EMAIL NOT VALID' ERROR HERE
+                            alert('Example error :\nThe email provided is not valid, try another email');
+                            
+                        }else if(returnData == 3){
+                            
+                            // ADD CUSTOM 'EMAIL EXISTS' ERROR HERE
+                            alert('Example error :\nEmail exists. You are already subscribed to this mailing list');
+                            
+                        }else if(returnData == 4){
+                            
+                            // ADD CUSTOM 'MAILING LIST' ERROR HERE
+                            alert('Example error :\nMember created but error pushing member data to mailing list');
+                            
+                        }else if(returnData == 5){
+                            
+                            // ADD CUSTOM 'SUCCESS' MESSAGE OR REDIRECT HERE EG: window.location.replace("signup-success");
+                            alert('Example success :\nSuccess! Added to mailing list\n\nLoyalty member was also created IF the subscriber was not currently a loyalty member.');
+                            
+                        }
+                    }
+                });
+            });
+        </script>
+       
+    </body>
+</html>
