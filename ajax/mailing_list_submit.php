@@ -416,7 +416,7 @@ if($_REQUEST['mailingList']) {
                         // REPLACE the {linkedstore} TAGS.
                         $body = str_replace('{linkedstore}', 'Log in to check linked store', $body);
                         // REPLACE the {password} TAGS.
-                        $body = str_replace('{password}', '******<br><small>Our records indicate you are an existing Natrad loyalty member.<br>Please use your current password when signing in.</small>', $body);
+                        $body = str_replace('{password}', '******<br><small>Our records indicate you are an existing loyalty member.<br>Please use your current password when signing in.</small>', $body);
                         
             
                         // EMAIL SERVER SETTINGS
