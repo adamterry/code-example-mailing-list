@@ -2,7 +2,7 @@
 This is a small sample of some code that I had recently written.
 The code here is only a small snippet containing an example form and part of the script that is used to process the form data.
 
-The full application also requires a custom database query classes and security classes that I had previously written to handle CRUD functionality.
+The full application also requires a custom database query class and security class that I had previously written to handle CRUD functionality.
 It also requires access to a much larger codebase that I had developed.
 This codebase houses all the backend tools and interfaces that allows administrators to handle data & reporting from within a clean GUI.
 
