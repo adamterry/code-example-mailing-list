@@ -7,7 +7,7 @@ It also requires access to a much larger codebase that I had developed.
 This codebase houses all the backend tools and interfaces that allows administrators to handle data & reporting from within a clean GUI.
 
 # What does it do?
-The full application allows for any external form to push subscribers to a loyalty system & mailing list.
+The full application allows for any external form to push subscribers to a mailing list.
 The mailing list can have an optional welcome email that will be processed upon sign up.
 
 The mailing list can then be accessed from within the main system and newsletters can be created & scheduled to run at later dates. (Similar to Mailchimp)
