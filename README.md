@@ -4,7 +4,7 @@ The code here is only a small snippet containing an example form and part of the
 
 The full application also requires a custom database query class and security class that I had previously written to handle CRUD functionality.
 It also requires access to a much larger codebase that I had developed.
-This codebase houses all the backend tools and interfaces that allows administrators to handle data & reporting from within a clean GUI.
+This codebase houses all the backend tools and UI that allows administrators to handle data & reporting from within a clean GUI.
 
 # What does it do?
 The full application allows for any external form to push subscribers to a mailing list.
